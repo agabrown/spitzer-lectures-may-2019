@@ -1,0 +1,159 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% TeX file gaia-science-tour.tex
+% Uses: beamer.cls
+% Last Updated:  2019.05.05
+% First Created: 2019.04.28
+%
+% Title: Gaia science tour
+%
+% Description: Spitzer Lectures series 2019, Princeton University, May 2019
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[smaller, aspectratio=169]{beamer}
+
+\usepackage{times,amsmath,graphicx,marvosym}
+\usepackage{tikz}
+\usepackage{animate}
+\usepackage{colortbl}
+\usetikzlibrary{arrows.meta,shapes,calc,shadows,backgrounds}
+\usetheme{lightbare169}
+
+\hypersetup{pdftitle={Gaia science tour},
+  pdfsubject={Spitzer Lectures series 2019, Princeton University, May 2019}, colorlinks=true,
+pdfauthor={Anthony Brown}}
+
+\tikzstyle{flow}=[-{Stealth[round]}, thick, shorten >=3pt, shorten <=3pt]
+\tikzstyle{flowboth}=[{Stealth[round]}-{Stealth[round]}, thick, shorten >=3pt, shorten <=3pt]
+
+\setbeamercovered{invisible}
+
+\graphicspath{ {./Images/} {/home/brown/Gaia/Presentation/Images/} }
+
+\newcommand\gdrone{Gaia~DR1}
+\newcommand\gdrtwo{Gaia~DR2}
+\newcommand\hip{Hipparcos}
+\newcommand\tyctwo{Tycho-2}
+\newcommand\tyc{Tycho}
+\input{/home/brown/Gaia/Presentation/GaiaDR2OverviewSlides/dr2stats}
+
+\newcommand\llslides{\href{https://www.cosmos.esa.int/documents/29201/1770596/Lindegren_GaiaDR2_Astrometry_extended.pdf/1ebddb25-f010-6437-cb14-0e360e2d9f09}{Lindegren
+et al.\ slide set}}
+
+\title[Spitzer Lectures May 2019]{Gaia science tour}
+\author{Anthony Brown}
+\institute{Leiden Observatory, Leiden University\\\texttt{brown@strw.leidenuniv.nl}}
+
+\begin{document}
+\logos{
+}
+
+%\begin{frame}
+%  \titlepage
+%\end{frame}
+
+\setbeamercolor{background canvas}{bg=black}
+\begin{emptyframe}{Title page}
+  \hglue-0.57truecm
+  \begin{tikzpicture}
+    \node (fig) at (current page)
+    {\includegraphics[width=15.9cm]{GaiaSky/GaiaDR2/ESA-PR/Gaia_s_sky_in_colour.jpg}};
+      \node at ($(fig.south east)+(-0.3,0)$) [anchor=north east, font=\sf\tiny, color=white] {ESA/Gaia/DPAC};
+      \node at ($(fig.south west)+(0.5,2.5)$) [anchor=south west, rotate=-45]
+      {\includegraphics[height=1.8cm]{Promotion/ArtistsImpression2013.png}};
+      \node (title) at ($(current page.north)+(0,-1.0)$) [anchor=north, text width=\textwidth, font=\Huge, text badly centered] {
+        \structure{\color{GaiaRed}\inserttitle}
+      };
+      \node (author) at ($(title.south)+(0,-0.5)$) [anchor=north, text width=\textwidth, font=\Large,
+      text badly centered, color=white] {\insertauthor};
+      \node (institute) at (author.south) [anchor=north, text width=\textwidth, font=\large, text
+      badly centered, color=white] {\insertinstitute};
+  \end{tikzpicture}
+\end{emptyframe}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{emptyframe}{Gaia covers all cosmic scales}
+  \hglue-0.57truecm
+  \begin{tikzpicture}
+    \node (fig) at (current page)
+    {\includegraphics[width=15.9cm]{GaiaDR2/ESA_Gaia_DR2_CosmicScales_Science_Infographic.jpg}};
+    \node at ($(fig.north west)+(4,-0.2)$) [anchor=north west, font=\tiny, color=white]
+    {Credits: ESA};
+  \end{tikzpicture}
+\end{emptyframe}
+\setbeamercolor{background canvas}{bg=white}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{agaframe}{Impact of Gaia DR1 and DR2}
+  \underbar{Gaia DR1}
+  \begin{itemize}
+    \item from $10^5$ to 2 million high precision parallaxes and proper motions
+    \item accurate all-sky positional reference frame to $G=20.7$
+    \item all-sky homogeneous white light photometry to $G=20.7$
+  \end{itemize}
+
+  \medskip
+  \underbar{Gaia DR2}
+  \begin{itemize}
+    \itemd $1.3$ billion high precision, all-sky, homogeneous, parallaxes and proper motions to
+      $G=20.7$
+      \begin{itemize}
+        \item precise geometric distances over several kpc around the Sun
+      \end{itemize}
+    \itemd high precision, homogeneous, all-sky photometric survey to $G=20.7$, three broad bands
+    \itemd First realization of optical reference frame from extragalactic sources
+    \itemd Large, all-sky, homogeneous, and precise radial velocity survey
+  \end{itemize}
+
+  \medskip
+  \underbar{We are getting used to}
+  \begin{itemize}
+    \item Looking up a parallax/ proper motion/ colour for any source in the sky
+    \item Much more opportunity for stellar occultation campaigns based on very precise predictions
+    \item Calibrating existing and future surveys onto Gaia astrometry/photometry
+      \begin{itemize}
+        \item including surveys from 100 years ago
+      \end{itemize}
+  \end{itemize}
+
+  \medskip
+  Following literature survey is a biased and very incomplete sample from the around 2000 papers
+  using Gaia data since September 2016.
+\end{agaframe}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR1Science/plutogaiadr0}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR1Science/hsoy}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR1Science/lmcrotation}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR2Science/lmc-smc-kinematics}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR1Science/lmc-smc-structure}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR2Science/cloudsinarms}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR1Science/sculptordr1}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR2Science/m31-m33}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR1Science/hvsdr1}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR2Science/hvsdr2}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR1Science/gaia1cluster}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR1Science/cmdanderson}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR1Science/oriondr1}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR2Science/micro-lensing-predictions}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR2Science/lensed-qsos}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR2Science/exoplanet-protoplanetarydisk-radii.tex}
+%
+\end{document}

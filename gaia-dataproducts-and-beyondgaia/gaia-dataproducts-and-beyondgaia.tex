@@ -1,0 +1,151 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% TeX file gaia-dataproducts-and-beyondgaia.tex
+% Uses: beamer.cls
+% Last Updated:  2019.05.02
+% First Created: 2019.04.19
+%
+% Title: Gaia: Celestial Inventory from the Solar System to the Milky Way Neighbourhood
+%
+% Description: Spitzer Lectures series 2019, Princeton University, May 2019
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[smaller, aspectratio=169]{beamer}
+
+\usepackage{times,amsmath,graphicx,marvosym}
+\usepackage{tikz}
+\usepackage{animate}
+\usepackage{colortbl}
+\usetikzlibrary{arrows.meta,shapes,calc,shadows,backgrounds}
+\usetheme{lightbare169}
+
+\hypersetup{pdftitle={Gaia: Celestial Inventory from the Solar System to the Milky Way Neighbourhood},
+pdfsubject={Spitzer Lectures series 2019, Princeton University, May 2019},
+pdfauthor={Anthony Brown}, colorlinks=true, linkbordercolor={1 0 0}}
+
+\tikzstyle{flow}=[-{Stealth[round]}, thick, shorten >=3pt, shorten <=3pt]
+\tikzstyle{flowboth}=[{Stealth[round]}-{Stealth[round]}, thick, shorten >=3pt, shorten <=3pt]
+
+\setbeamercovered{invisible}
+
+\graphicspath{ {./Images/} {/home/brown/Gaia/Presentation/Images/} }
+
+\newcommand\gdrone{Gaia~DR1}
+\newcommand\gdrtwo{Gaia~DR2}
+\newcommand\hip{Hipparcos}
+\newcommand\tyctwo{Tycho-2}
+\newcommand\tyc{Tycho}
+\input{/home/brown/Gaia/Presentation/GaiaDR2OverviewSlides/dr2stats}
+
+\title[Spitzer Lectures May 2019]{Gaia: Celestial Inventory from the Solar System to the Milky Way}
+\author{Anthony Brown}
+\institute{Leiden Observatory, Leiden University\\\texttt{brown@strw.leidenuniv.nl}}
+
+\begin{document}
+\logos{
+}
+
+%\begin{frame}
+%  \titlepage
+%\end{frame}
+
+\setbeamercolor{background canvas}{bg=black}
+\begin{emptyframe}{Title page}
+  \hglue-0.57truecm
+  \begin{tikzpicture}
+    \node (fig) at (current page)
+    {\includegraphics[width=15.9cm]{GaiaSky/GaiaDR2/ESA-PR/Gaia_s_sky_in_colour.jpg}};
+      \node at ($(fig.south east)+(-0.3,0)$) [anchor=north east, font=\sf\tiny, color=white] {ESA/Gaia/DPAC};
+      \node at ($(fig.south west)+(0.5,2.5)$) [anchor=south west, rotate=-45]
+      {\includegraphics[height=1.8cm]{Promotion/ArtistsImpression2013.png}};
+      \node (title) at ($(current page.north)+(0,-1.0)$) [anchor=north, text width=\textwidth, font=\Huge, text badly centered] {
+        \structure{\color{GaiaRed}\inserttitle}
+      };
+      \node (author) at ($(title.south)+(0,-0.5)$) [anchor=north, text width=\textwidth, font=\Large,
+      text badly centered, color=white] {\insertauthor};
+      \node (institute) at (author.south) [anchor=north, text width=\textwidth, font=\large, text
+      badly centered, color=white] {\insertinstitute};
+  \end{tikzpicture}
+\end{emptyframe}
+\setbeamercolor{background canvas}{bg=white}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{agaframe}{About these lectures}
+  \begin{itemize}
+    \item All slides and other materials on Github
+      \begin{itemize}
+        \item \url{https://github.com/agabrown/spitzer-lectures-may2019}
+      \end{itemize}
+    \item Hyperlinks to papers and web pages are `clickable'
+    \item Feel free to re-use the slides but please credit appropriately
+      \begin{itemize}
+        \item i.e., use original references to the figures
+        \item unless otherwise stated figure credits are `Anthony G.A.~Brown'
+      \end{itemize}
+  \end{itemize}
+\end{agaframe}
+%
+\section[Gaia]{Gaia mission summary}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/Gaia/gaia-overview}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/Gaia/sifobs}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/Gaia/data-collection}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/alerts}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\setbeamercolor{background canvas}{bg=black}
+\begin{emptyframe}{Where's Gaia?}
+  \begin{tikzpicture}
+    \node (fig) {\includegraphics[height=7cm]{GBOT/Gaia_seen_by_ESO_VST_eso1908a_1280.jpg}};
+    \node at ($(fig.north west)+(-0.5,0.5)$) [color=GaiaRed, font=\large]{\sf Where's Gaia?};
+    \node at (fig.south) [anchor=north, font=\scriptsize, text width=15cm] {
+      \url{https://www.eso.org/public/news/eso1908/}\\
+      \url{http://sci.esa.int/gaia/61327-observing-gaia-from-earth-to-improve-its-star-maps/}
+    };
+  \end{tikzpicture}
+\end{emptyframe}
+\setbeamercolor{background canvas}{bg=white}
+%
+%
+\section[Data processing]{Data processing}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/DataProcessing/data-processing-inbrief}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/DataProcessing/teamwork}
+%
+\section[Data products]{Gaia data products (current and planned)}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/DataProcessing/data-products}
+%
+\section[Long term]{Mission extension and beyond Gaia}
+%
+%\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/dr3dr4}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{emptyframe}{Gaia mission extension}
+  \centering
+  \textcolor{GaiaRed}{\Huge Gaia mission extension}
+\end{emptyframe}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/Extension/gaia-extension-princeton2019}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{emptyframe}{Beyond Gaia}
+  \centering
+  \textcolor{GaiaRed}{\Huge Beyond Gaia}
+\end{emptyframe}
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/BeyondGaia/space-astrometry-beyond-gaia}
+%
+\section[Conclusions]{Conclusions}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/literature-entrypoints}
+%
+\end{document}

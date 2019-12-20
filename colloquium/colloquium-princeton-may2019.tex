@@ -1,0 +1,121 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% TeX file colloquium-princeton-may2019.tex
+% Uses: beamer.cls
+% Last Updated:  2019.05.05
+% First Created: 2019.04.28
+%
+% Title: Gaia: mission status and results from the second data release
+%
+% Description: Colloquium, Princeton University, May 2019
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[smaller, aspectratio=169]{beamer}
+
+\usepackage{times,amsmath,graphicx,marvosym}
+\usepackage{tikz}
+\usepackage{animate}
+\usepackage{colortbl}
+\usetikzlibrary{arrows.meta,shapes,calc,shadows,backgrounds}
+\usetheme{lightbare169}
+
+\hypersetup{pdftitle={Gaia: mission status and results from the second data release},
+  pdfsubject={Colloquium, Princeton University, May 2019}, colorlinks=true,
+pdfauthor={Anthony Brown}}
+
+\tikzstyle{flow}=[-{Stealth[round]}, thick, shorten >=3pt, shorten <=3pt]
+\tikzstyle{flowboth}=[{Stealth[round]}-{Stealth[round]}, thick, shorten >=3pt, shorten <=3pt]
+
+\setbeamercovered{invisible}
+
+\graphicspath{ {./Images/} {/home/brown/Gaia/Presentation/Images/} }
+
+\newcommand\gdrone{Gaia~DR1}
+\newcommand\gdrtwo{Gaia~DR2}
+\newcommand\hip{Hipparcos}
+\newcommand\tyctwo{Tycho-2}
+\newcommand\tyc{Tycho}
+\input{/home/brown/Gaia/Presentation/GaiaDR2OverviewSlides/dr2stats}
+
+\title[Princeton - May 7 2019]{Gaia: mission status and results from the second data release}
+\author{Anthony Brown}
+\institute{Leiden Observatory, Leiden University\\\texttt{brown@strw.leidenuniv.nl}}
+
+\begin{document}
+\logos{
+}
+
+%\begin{frame}
+%  \titlepage
+%\end{frame}
+
+\setbeamercolor{background canvas}{bg=black}
+\begin{emptyframe}{Title page}
+  \hglue-0.57truecm
+  \begin{tikzpicture}
+    \node (fig) at (current page)
+    {\includegraphics[width=15.9cm]{GaiaSky/GaiaDR2/ESA-PR/Gaia_s_sky_in_colour.jpg}};
+      \node at ($(fig.south east)+(-0.3,0)$) [anchor=north east, font=\sf\tiny, color=white] {ESA/Gaia/DPAC};
+      \node at ($(fig.south west)+(0.5,2.5)$) [anchor=south west, rotate=-45]
+      {\includegraphics[height=1.8cm]{Promotion/ArtistsImpression2013.png}};
+      \node (title) at ($(current page.north)+(0,-1.0)$) [anchor=north, text width=\textwidth, font=\Huge, text badly centered] {
+        \structure{\color{GaiaRed}\inserttitle}
+      };
+      \node (author) at ($(title.south)+(0,-0.5)$) [anchor=north, text width=\textwidth, font=\Large,
+      text badly centered, color=white] {\insertauthor};
+      \node (institute) at (author.south) [anchor=north, text width=\textwidth, font=\large, text
+      badly centered, color=white] {\insertinstitute};
+  \end{tikzpicture}
+\end{emptyframe}
+\setbeamercolor{background canvas}{bg=white}
+%
+\section[Gaia]{Gaia mission summary}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/Gaia/gaia-overview-single-slide}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/Gaia/gaia-instruments-measurements}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/alerts}
+%
+\section[Gaia DR2]{Gaia DR2 summary}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR2Contents/dr2-numbers}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR2Contents/dr2-resources-image}
+%
+\section[Long term]{Future Gaia data releases and mission extension}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/dr3dr4-compact}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/Extension/gaia-extension-oneslide}
+%
+\section[Gaia science]{Science highlights}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR2Science/collage}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR2Science/navigation-occultation-planning}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR2Science/dr2-sso-shape-distribution}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR2Science/radio-optical-offsets}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR2Science/white-dwarfs}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR2Science/youngstarmap-oneslide}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR2Science/betapic}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR2Science/omega-cen-stream}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR2Science/orphan-stream}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR2Science/lmcwake}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/GaiaDR2Science/milkyway-lessons-learned}
+%
+\section[Conclusions]{Conclusions}
+%
+\input{/home/brown/Gaia/Presentation/GaiaTalkBuildingBlocks/ConcludingSlide/conclusions-extension}
+%
+\end{document}
